@@ -20,20 +20,19 @@ MariaDB [(none)]> SHOW DATABASES;
 | information_schema |
 | mysql              |
 | performance_schema |
+| perpustakaan       |
 | phpmyadmin         |
+| siperpus           |
 | test               |
 +--------------------+
-5 rows in set (0.001 sec)
+7 rows in set (0.016 sec)
 
-MariaDB [(none)]> CREATE DATABSE PERPUSTAKAAN
+MariaDB [(none)]> CREATE DATABASE PERPUS1
     -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'DATABSE PERPUSTAKAAN' at line 1
-MariaDB [(none)]> CREATE DATABASE PERPUSTAKAAN
-    -> ;
-Query OK, 1 row affected (0.011 sec)
+Query OK, 1 row affected (0.002 sec)
 
-MariaDB [(none)]> CREATE DATABASE IF NOT EXISTS SIPERPUS;
-Query OK, 1 row affected (0.001 sec)
+MariaDB [(none)]> CREATE DATABASE IF NOT EXISTS SIPERPUS1;
+Query OK, 1 row affected (0.003 sec)
 
 MariaDB [(none)]> SHOW DATABASES;
 +--------------------+
@@ -42,33 +41,35 @@ MariaDB [(none)]> SHOW DATABASES;
 | information_schema |
 | mysql              |
 | performance_schema |
+| perpus1            |
 | perpustakaan       |
 | phpmyadmin         |
 | siperpus           |
+| siperpus1          |
 | test               |
 +--------------------+
-7 rows in set (0.001 sec)
+9 rows in set (0.001 sec)
 
-MariaDB [(none)]> USE PERPUSTAKAAN;
+MariaDB [(none)]> USE PERPUS1;
 Database changed
-MariaDB [PERPUSTAKAAN]> CREATE TABLE MAHASISWA (
+MariaDB [PERPUS1]> CREATE TABLE mahasiswa1 (
     -> NPM char(5) NOT NULL PRIMARY KEY,
     -> Nama varchar(20) NOT NULL,
     -> Tempat_lahir varchar(20) NOT NULL,
     -> Tanggal_lahir DATE NOT NULL,
     -> No_hp varchar(25)
     -> );
-Query OK, 0 rows affected (0.031 sec)
+Query OK, 0 rows affected (0.037 sec)
 
-MariaDB [PERPUSTAKAAN]> show tables;
-+------------------------+
-| Tables_in_perpustakaan |
-+------------------------+
-| mahasiswa              |
-+------------------------+
-1 row in set (0.004 sec)
+MariaDB [PERPUS1]> show tables;
++-------------------+
+| Tables_in_perpus1 |
++-------------------+
+| mahasiswa1        |
++-------------------+
+1 row in set (0.001 sec)
 
-MariaDB [PERPUSTAKAAN]> DESC mahasiswa;
+MariaDB [PERPUS1]> DESC mahasiswa1;
 +---------------+-------------+------+-----+---------+-------+
 | Field         | Type        | Null | Key | Default | Extra |
 +---------------+-------------+------+-----+---------+-------+
@@ -78,6 +79,6 @@ MariaDB [PERPUSTAKAAN]> DESC mahasiswa;
 | Tanggal_lahir | date        | NO   |     | NULL    |       |
 | No_hp         | varchar(25) | YES  |     | NULL    |       |
 +---------------+-------------+------+-----+---------+-------+
-5 rows in set (0.011 sec)
+5 rows in set (0.009 sec)
 
-MariaDB [PERPUSTAKAAN]>
+MariaDB [PERPUS1]>
